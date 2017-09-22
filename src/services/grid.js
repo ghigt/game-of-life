@@ -5,9 +5,9 @@ export const sum = (arr = []) => arr.reduce((agg, c) => agg + c, 0);
 // return the state of a cell
 export const computeCellState = (state, neighbours = []) => {
   switch (sum(neighbours)) {
-    case 3:
-      return state;
     case 2:
+      return state;
+    case 3:
       return 1;
     default:
       return 0;

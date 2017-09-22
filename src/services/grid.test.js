@@ -18,12 +18,12 @@ test('compute new state with 4 ns alive', () => {
 });
 
 test('compute new state with 3 ns alive', () => {
-  expect(computeCellState(0, [1,0,1,1])).toBe(0);
+  expect(computeCellState(0, [1,0,1,1])).toBe(1);
   expect(computeCellState(1, [1,0,1,1])).toBe(1);
 });
 
 test('compute new state with 2 ns alive', () => {
-  expect(computeCellState(0, [1,0,0,1])).toBe(1);
+  expect(computeCellState(0, [1,0,0,1])).toBe(0);
   expect(computeCellState(1, [1,0,0,1])).toBe(1);
 });
 
@@ -47,8 +47,8 @@ test('compute new grid state with 0 ns to 3', () => {
     [1,1,1,1]
   ];
   const expGrid = [
-    [0,1,1,0],
-    [1,0,1,0],
+    [0,0,0,0],
+    [0,0,1,0],
     [1,0,0,0],
     [1,0,0,1]
   ]
@@ -64,7 +64,7 @@ test('compute new grid state with 4 ns', () => {
   ];
 
   const expGrid = [
-    [0,0,0,1],
+    [0,1,0,1],
     [0,0,0,0],
     [1,0,0,0],
     [1,0,0,1]
